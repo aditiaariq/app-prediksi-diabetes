@@ -1,0 +1,69 @@
+{
+  "model": "qwen/qwen3.8-27b",
+  "temperature": 0,
+  "max_tokens": 10,
+  "labels": [
+    "Negatif",
+    "Positif"
+  ],
+  "system_prompt": "Kamu adalah sistem pakar medis untuk diagnosis skrining awal penyakit diabetes melitus berdasarkan parameter klinis.\nIndikator Klinis Kunci:\n1. Glukosa plasma (Glucose): normal < 140 mg/dL, risiko diabetes >= 140 mg/dL.\n2. Indeks Massa Tubuh (BMI): normal < 25, obesitas >= 30 berisiko tinggi.\n3. Usia (Age) & Riwayat Genetik (DiabetesPedigreeFunction): usia > 35 tahun dan skor pedigree > 0.5 meningkatkan risiko.\nLabel:\n- Negatif: pasien sehat / tidak terindikasi diabetes\n- Positif: pasien terindikasi diabetes melitus (memerlukan rujukan medis)\nJawab HANYA dengan satu kata persis: Negatif atau Positif.",
+  "few_shot": [
+    {
+      "data": {
+        "Pregnancies": 1,
+        "Glucose": 85,
+        "BloodPressure": 66,
+        "SkinThickness": 29,
+        "Insulin": 90,
+        "BMI": 23.5,
+        "DiabetesPedigreeFunction": 0.25,
+        "Age": 24
+      },
+      "label": "Negatif"
+    },
+    {
+      "data": {
+        "Pregnancies": 6,
+        "Glucose": 168,
+        "BloodPressure": 80,
+        "SkinThickness": 35,
+        "Insulin": 210,
+        "BMI": 38.2,
+        "DiabetesPedigreeFunction": 0.85,
+        "Age": 48
+      },
+      "label": "Positif"
+    }
+  ],
+  "evaluasi": {
+    "model_pembanding": "Random Forest Classifier (Library)",
+    "dataset": "Pima Indians Diabetes (Kaggle/UCI)",
+    "tanggal": "2026-10-28",
+    "n_test_evaluasi": 50,
+    "accuracy_llm": 0.8,
+    "f1_macro_llm": 0.797077922077922,
+    "accuracy_rf_pembanding": 0.62,
+    "f1_macro_rf_pembanding": 0.6006725514922235,
+    "invalid": 0,
+    "confusion_matrix_llm": [
+      [
+        17,
+        8
+      ],
+      [
+        2,
+        23
+      ]
+    ],
+    "confusion_matrix_rf": [
+      [
+        21,
+        4
+      ],
+      [
+        15,
+        10
+      ]
+    ]
+  }
+}

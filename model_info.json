@@ -1,0 +1,93 @@
+{
+  "nama_model": "Random Forest Classifier (Diabetes Diagnostic Pipeline)",
+  "metode": "Ensemble Random Forest (n=150, max_depth=6) with Median Imputation & Standardization",
+  "fitur": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "target": "Outcome",
+  "label_map": {
+    "0": "Negatif (Normal)",
+    "1": "Positif Diabetes"
+  },
+  "rentang_fitur": {
+    "Pregnancies": [
+      0.0,
+      17.0
+    ],
+    "Glucose": [
+      0.0,
+      199.0
+    ],
+    "BloodPressure": [
+      0.0,
+      122.0
+    ],
+    "SkinThickness": [
+      0.0,
+      99.0
+    ],
+    "Insulin": [
+      0.0,
+      846.0
+    ],
+    "BMI": [
+      0.0,
+      67.1
+    ],
+    "DiabetesPedigreeFunction": [
+      0.078,
+      2.42
+    ],
+    "Age": [
+      21.0,
+      81.0
+    ]
+  },
+  "median_fitur": {
+    "Pregnancies": 3.0,
+    "Glucose": 117.0,
+    "BloodPressure": 72.0,
+    "SkinThickness": 29.0,
+    "Insulin": 125.0,
+    "BMI": 32.4,
+    "DiabetesPedigreeFunction": 0.3825,
+    "Age": 29.0
+  },
+  "metrik": {
+    "n_train": 614,
+    "n_test": 154,
+    "accuracy": 0.7402597402597403,
+    "f1_macro": 0.7006802721088435,
+    "f1_binary": 0.5918367346938775,
+    "roc_auc": 0.8062962962962964,
+    "baseline_f1_macro": 0.3937007874015748,
+    "baseline_accuracy": 0.6493506493506493,
+    "confusion_matrix": [
+      [
+        85,
+        15
+      ],
+      [
+        25,
+        29
+      ]
+    ]
+  },
+  "feature_importance": {
+    "Glucose": 0.34349443765452786,
+    "BMI": 0.16356999780813963,
+    "Age": 0.12864460078375461,
+    "Insulin": 0.09752062400264705,
+    "DiabetesPedigreeFunction": 0.09179210310112902,
+    "SkinThickness": 0.06290122472807631,
+    "Pregnancies": 0.06198858743574473,
+    "BloodPressure": 0.050088424485980755
+  }
+}
